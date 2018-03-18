@@ -1,1 +1,16 @@
-index.html.erb
+<h1>User List</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <% if user.is_admin? %>
+        <td>Admin</td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
